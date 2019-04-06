@@ -14,8 +14,8 @@ fi
 TMP_PART=/opt/tmppart/parts
 TMP_MNT=/opt/tmppart/mntpoints
 
-SHORT=vm:d:s:n:p:u:f
-LONG=verbose,size:,name:,force
+SHORT=vs:n:
+LONG=verbose,size:,name:
 FORCE=false
 [ ! -d $TMP_PART ] && mkdir -p $TMP_PART 
 [ ! -d $TMP_MNT ] && mkdir -p $TMP_MNT
@@ -36,10 +36,6 @@ while true; do
     case "$1" in
         -v|--verbose)
             set -x
-            shift
-            ;;
-        -f|--force)
-            FORCE=true
             shift
             ;;
         -s|--size)
